@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <quizs>
-    <tank name="MS-1" pic="ussr_ms_1" country="USSR" class="LIGHTTANK" />
+    <quiz question="My girlfriend is 170 cm … ." firstanswer="tall" secondanswer="high" thirdanswer="low" fourthanswer="beautiful" rightanswer="0"/>
+    <quiz question="чайник" firstanswer="plate" secondanswer="spoon" thirdanswer="cup" fourthanswer="kettle" rightanswer="3" />
+    <quiz question="Я поспішаю." firstanswer="I’m in a hurry." secondanswer="I hurry." thirdanswer="I’m fast." fourthanswer="Hurry up." rightanswer="0" />
+    <quiz question="How often do you visit theaters?" firstanswer="Once per week" secondanswer="On Saturday" thirdanswer="Yesterday" fourthanswer="I like theaters" rightanswer="0" />
+    <quiz question="What would you like to drink: tea or coffee?" firstanswer="Yes." secondanswer="A cup of coffee please." thirdanswer="Coffee." fourthanswer="I want the coffee." rightanswer="1" />
+    <quiz question="Do you like pizza?" firstanswer="He likes pizza." secondanswer="No, not." thirdanswer="Yes, I do." fourthanswer="What?" rightanswer="2" />
 </quizs>
