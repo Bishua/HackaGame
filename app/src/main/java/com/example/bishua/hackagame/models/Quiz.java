@@ -6,17 +6,19 @@ import java.io.Serializable;
  * Created by BishUA on 13.09.2014.
  */
 public class Quiz implements Serializable {
-    protected Question question;
-    protected Answer answer1;
-    protected Answer answer2;
-    protected Answer answer3;
+    private Question question;
+    private Answer firstAnswer;
+    private Answer secondAnswer;
+    private Answer thirdAnswer;
+    private Answer fourthAnswer;
+    private int rightAnswer;
 
-    public Answer getAnswer4() {
-        return answer4;
+    public Answer getFourthAnswer() {
+        return fourthAnswer;
     }
 
-    public void setAnswer4(Answer answer4) {
-        this.answer4 = answer4;
+    public void setFourthAnswer(Answer fourthAnswer) {
+        this.fourthAnswer = fourthAnswer;
     }
 
     public Question getQuestion() {
@@ -27,29 +29,36 @@ public class Quiz implements Serializable {
         this.question = question;
     }
 
-    public Answer getAnswer1() {
-        return answer1;
+    public Answer getFirstAnswer() {
+        return firstAnswer;
     }
 
-    public void setAnswer1(Answer answer1) {
-        this.answer1 = answer1;
+    public void setFirstAnswer(Answer firstAnswer) {
+        this.firstAnswer = firstAnswer;
     }
 
-    public Answer getAnswer2() {
-        return answer2;
+    public Answer getSecondAnswer() {
+        return secondAnswer;
     }
 
-    public void setAnswer2(Answer answer2) {
-        this.answer2 = answer2;
+    public void setSecondAnswer(Answer secondAnswer) {
+        this.secondAnswer = secondAnswer;
     }
 
-    public Answer getAnswer3() {
-        return answer3;
+    public Answer getThirdAnswer() {
+        return thirdAnswer;
     }
 
-    public void setAnswer3(Answer answer3) {
-        this.answer3 = answer3;
+    public void setThirdAnswer(Answer thirdAnswer) {
+        this.thirdAnswer = thirdAnswer;
     }
 
-    protected Answer answer4;
+    public int getRightAnswer() {
+        return rightAnswer;
+    }
+
+    public void setRightAnswer(int rightAnswer) {
+        this.rightAnswer = rightAnswer;
+    }
+
 }

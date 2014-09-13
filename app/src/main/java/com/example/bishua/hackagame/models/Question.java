@@ -6,8 +6,8 @@ import java.io.Serializable;
  * Created by BishUA on 13.09.2014.
  */
 public class Question implements Serializable {
-    protected String text;
-    protected String image;
+    private String text;
+    private String image;
 
     public String getImage() {
         return image;

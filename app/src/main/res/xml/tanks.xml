@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quizs>
+    <tank name="MS-1" pic="ussr_ms_1" country="USSR" class="LIGHTTANK" />
+</quizs>

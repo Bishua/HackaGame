@@ -80,11 +80,12 @@ public class MainActivity extends ActionBarActivity {
         answer4.setText("four");
         Question question = new Question();
         question.setText("question");
-        quiz.setAnswer1(answer1);
-        quiz.setAnswer2(answer2);
-        quiz.setAnswer3(answer3);
-        quiz.setAnswer4(answer4);
+        quiz.setFirstAnswer(answer1);
+        quiz.setSecondAnswer(answer2);
+        quiz.setThirdAnswer(answer3);
+        quiz.setFourthAnswer(answer4);
         quiz.setQuestion(question);
+        quiz.setRightAnswer(1);
         //end dummy data
 
         Bundle bundle = new Bundle();
@@ -100,4 +101,5 @@ public class MainActivity extends ActionBarActivity {
         intent.putExtras(bundle);
         startActivity(intent);
     }
+
 }

@@ -1,9 +1,13 @@
 package com.example.bishua.hackagame;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -16,14 +20,17 @@ public class QuizActivity extends ActionBarActivity {
     private Button button2;
     private Button button3;
     private Button button4;
+    private int rightAnswer;
     private TextView textView;
+    private int questionCount = 0;
+    private int rightQuestionCount = 0;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-//        Quiz quiz = (Quiz)savedInstanceState.getSerializable("quiz");\
         Bundle bundle = getIntent().getExtras();
         Quiz quiz = new Quiz();
 
@@ -32,9 +39,33 @@ public class QuizActivity extends ActionBarActivity {
         }
 
         button1 = (Button) findViewById(R.id.button1);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onButtonClick(1);
+            }
+        });
         button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onButtonClick(2);
+            }
+        });
         button3 = (Button) findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onButtonClick(3);
+            }
+        });
         button4 = (Button) findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onButtonClick(4);
+            }
+        });
         textView = (TextView) findViewById(R.id.textView);
         initControls(quiz);
 
@@ -69,11 +100,48 @@ public class QuizActivity extends ActionBarActivity {
     protected void onResume() {
         super.onResume();
     }
+
     private void initControls(Quiz quiz){
-        button1.setText(quiz.getAnswer1().getText());
-        button2.setText(quiz.getAnswer2().getText());
-        button3.setText(quiz.getAnswer3().getText());
-        button4.setText(quiz.getAnswer4().getText());
+        button1.setText(quiz.getFirstAnswer().getText());
+        button2.setText(quiz.getSecondAnswer().getText());
+        button3.setText(quiz.getThirdAnswer().getText());
+        button4.setText(quiz.getFourthAnswer().getText());
         textView.setText(quiz.getQuestion().getText());
+        rightAnswer = quiz.getRightAnswer();
+
     }
+
+    private void onButtonClick(int answer){
+        String massage = "";
+        if(answer == rightAnswer){
+           massage = "Right!";
+           rightQuestionCount++;
+        }else {
+           massage = "Wrong";
+        }
+
+        new AlertDialog.Builder(this).setTitle("result").setMessage(massage).setPositiveButton("ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                recreate();
+            }
+        }).show();
+            questionCount++;
+    }
+
+    public void questionLoad(){
+
+    }
+    private void nextQuestion(){
+        if(questionCount<10){
+
+        }else{
+
+        }
+
+    }
+    private void highScore(){
+        Intent intent = new Intent(this, QuizActivity.class);
+    }
+
 }
