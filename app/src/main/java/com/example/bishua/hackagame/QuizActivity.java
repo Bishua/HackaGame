@@ -120,12 +120,19 @@ public class QuizActivity extends ActionBarActivity {
            massage = "Wrong";
         }
 
-        new AlertDialog.Builder(this).setTitle("result").setMessage(massage).setPositiveButton("ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                recreate();
-            }
-        }).show();
+        new AlertDialog.Builder(this)
+                .setMessage(massage)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // continue with delete
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // do nothing
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert).show();
             questionCount++;
     }
 
