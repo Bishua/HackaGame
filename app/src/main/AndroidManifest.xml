@@ -3,6 +3,7 @@
     package="com.example.bishua.hackagame" >
 
     <application
+        android:name="com.example.bishua.hackagame.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -23,6 +24,10 @@
         <activity
             android:name=".HighScore"
             android:label="@string/title_activity_high_score" >
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_about" >
         </activity>
     </application>
 

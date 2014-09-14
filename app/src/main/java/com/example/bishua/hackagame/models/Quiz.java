@@ -13,6 +13,17 @@ public class Quiz implements Serializable {
     private Answer fourthAnswer;
     private int rightAnswer;
 
+    public Quiz(Question question, Answer answer1, Answer answer2, Answer answer3, Answer answer4, int rightAnswer){
+        this.question = question;
+        this.firstAnswer = answer1;
+        this.secondAnswer = answer2;
+        this.thirdAnswer = answer3;
+        this.fourthAnswer = answer4;
+        this.rightAnswer= rightAnswer;
+    }
+
+    public Quiz(){}
+
     public Answer getFourthAnswer() {
         return fourthAnswer;
     }

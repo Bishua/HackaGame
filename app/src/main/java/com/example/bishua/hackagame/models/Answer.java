@@ -10,6 +10,14 @@ public class Answer implements Serializable {
     private String image;
     private String url;
 
+    public Answer(){}
+
+    public Answer(String text, String image, String url) {
+        this.text = text;
+        this.image = image;
+        this.url = url;
+    }
+
     public String getText() {
         return text;
     }

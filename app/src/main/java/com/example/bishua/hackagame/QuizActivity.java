@@ -32,7 +32,7 @@ public class QuizActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
         Bundle bundle = getIntent().getExtras();
-        Quiz quiz = new Quiz();
+        Quiz quiz = null;
 
         if(bundle != null){
            quiz = (Quiz) bundle.getSerializable("quiz");
@@ -140,9 +140,9 @@ public class QuizActivity extends ActionBarActivity {
 
     }
     private void nextQuestion(){
-        if(questionCount<10){
+            if(questionCount<10){
 
-        }else{
+            }else{
 
         }
 
