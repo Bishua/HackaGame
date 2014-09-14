@@ -12,5 +12,6 @@ import java.util.List;
  */
 public interface QuizListDao {
     public List<Quiz> getQuizes() throws JSONException;
+    public JSONObject parseJsonData()throws JSONException;
 
 }

@@ -117,16 +117,7 @@ public class QuizActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
+  
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putSerializable("quiz", quiz);

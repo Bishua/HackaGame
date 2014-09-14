@@ -70,7 +70,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void startGame(View view){
-        
+
         Intent intent = new Intent(this, QuizActivity.class);
         startActivity(intent);
 

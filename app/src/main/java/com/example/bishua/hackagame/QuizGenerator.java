@@ -14,8 +14,8 @@ import java.util.Random;
 public class QuizGenerator {
     List<Quiz> quizList = new ArrayList<Quiz>();
     Random random = new Random();
-    int i =0;
-    public QuizGenerator(){
+
+    public QuizGenerator() {
         for(int i = 0; i<50; i++) {
             Quiz quiz = new Quiz();
             Answer answer1 = new Answer();
@@ -35,8 +35,11 @@ public class QuizGenerator {
             quiz.setQuestion(question);
             quiz.setRightAnswer(1);
             quizList.add(quiz);
-        }
     }
+
+
+    }
+
     public Quiz getNext(){
         return quizList.get(random.nextInt(50));
     }

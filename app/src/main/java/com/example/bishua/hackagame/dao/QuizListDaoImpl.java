@@ -55,6 +55,8 @@ public class QuizListDaoImpl implements QuizListDao {
             is.close();
 
             jsonString = new String(bytes, "UTF-8");
+
+
             jsonObject = new JSONObject(jsonString);
         } catch (IOException e) {
             e.printStackTrace();
