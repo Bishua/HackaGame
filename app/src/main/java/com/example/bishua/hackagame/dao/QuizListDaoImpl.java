@@ -52,6 +52,7 @@ public class QuizListDaoImpl implements QuizListDao {
             byte[] bytes = new byte[sizeOfJSONFile];
 
             is.read(bytes);
+
             is.close();
 
             jsonString = new String(bytes, "UTF-8");
