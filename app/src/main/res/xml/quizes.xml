@@ -2,9 +2,9 @@
 <quizes>
     <quiz question="В каком году началась вторая мировая война?" firstanswer="што" secondanswer="волынская резня" thirdanswer="1941" fourthanswer="не понял вопрос" rightanswer="1"/>
     <quiz question="My girlfriend is 170 cm … ." firstanswer="tall" secondanswer="high" thirdanswer="low" fourthanswer="beautiful" rightanswer="1"/>
-    <quiz question="чайник" firstanswer="plate" secondanswer="spoon" thirdanswer="cup" fourthanswer="kettle" rightanswer="3" />
-    <quiz question="Я поспішаю." firstanswer="I’m in a hurry." secondanswer="I hurry." thirdanswer="I’m fast." fourthanswer="Hurry up." rightanswer="0" />
-    <quiz question="How often do you visit theaters?" firstanswer="Once per week" secondanswer="On Saturday" thirdanswer="Yesterday" fourthanswer="I like theaters" rightanswer="0" />
-    <quiz question="What would you like to drink: tea or coffee?" firstanswer="Yes." secondanswer="A cup of coffee please." thirdanswer="Coffee." fourthanswer="I want the coffee." rightanswer="1" />
-    <quiz question="Do you like pizza?" firstanswer="He likes pizza." secondanswer="No, not." thirdanswer="Yes, I do." fourthanswer="What?" rightanswer="2" />
+    <quiz question="чайник" firstanswer="plate" secondanswer="spoon" thirdanswer="cup" fourthanswer="kettle" rightanswer="4" />
+    <quiz question="Я поспішаю." firstanswer="I’m in a hurry." secondanswer="I hurry." thirdanswer="I’m fast." fourthanswer="Hurry up." rightanswer="1" />
+    <quiz question="How often do you visit theaters?" firstanswer="Once per week" secondanswer="On Saturday" thirdanswer="Yesterday" fourthanswer="I like theaters" rightanswer="1" />
+    <quiz question="What would you like to drink: tea or coffee?" firstanswer="Yes." secondanswer="A cup of coffee please." thirdanswer="Coffee." fourthanswer="I want the coffee." rightanswer="2" />
+    <quiz question="Do you like pizza?" firstanswer="He likes pizza." secondanswer="No, not." thirdanswer="Yes, I do." fourthanswer="What?" rightanswer="3" />
 </quizes>
