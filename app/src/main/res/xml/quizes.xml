@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <quizes>
-    <quiz question="My girlfriend is 170 cm … ." firstanswer="tall" secondanswer="high" thirdanswer="low" fourthanswer="beautiful" rightanswer="0"/>
+    <quiz question="My girlfriend is 170 cm … ." firstanswer="tall" secondanswer="high" thirdanswer="low" fourthanswer="beautiful" rightanswer="1"/>
     <quiz question="чайник" firstanswer="plate" secondanswer="spoon" thirdanswer="cup" fourthanswer="kettle" rightanswer="3" />
     <quiz question="Я поспішаю." firstanswer="I’m in a hurry." secondanswer="I hurry." thirdanswer="I’m fast." fourthanswer="Hurry up." rightanswer="0" />
     <quiz question="How often do you visit theaters?" firstanswer="Once per week" secondanswer="On Saturday" thirdanswer="Yesterday" fourthanswer="I like theaters" rightanswer="0" />

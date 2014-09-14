@@ -2,6 +2,7 @@ package com.example.bishua.hackagame;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.res.XmlResourceParser;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -11,8 +12,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.bishua.hackagame.models.Answer;
+import com.example.bishua.hackagame.models.Question;
 import com.example.bishua.hackagame.models.Quiz;
+
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class QuizActivity extends ActionBarActivity {
@@ -27,6 +37,8 @@ public class QuizActivity extends ActionBarActivity {
     private int rightQuestionCount = 0;
     private QuizGenerator quizGenerator;
     private Quiz quiz;
+    private List<Quiz> list = new ArrayList<Quiz>();
+
 
 
     @Override
@@ -50,9 +62,10 @@ public class QuizActivity extends ActionBarActivity {
 
         textView = (TextView) findViewById(R.id.textView);
 
-        quiz = quizGenerator.getNext();
-
-        initControls(quiz);
+//        quiz = quizGenerator.getNext();
+        getQuizes();
+        list.get(0);
+        initControls(list.get(0));
 
 
     }
@@ -117,7 +130,7 @@ public class QuizActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-  
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putSerializable("quiz", quiz);
@@ -140,6 +153,37 @@ public class QuizActivity extends ActionBarActivity {
         rightAnswer = quiz.getRightAnswer();
 
 
+    }
+
+
+    private void getQuizes() {
+        XmlResourceParser quizes = getResources().getXml(R.xml.quizes);
+        int eventType = -1;
+        while (eventType != XmlResourceParser.END_DOCUMENT) {
+            if (eventType == XmlResourceParser.START_TAG) {
+                String strName = quizes.getName();
+                if (strName.equals("quiz")) {
+                    Quiz quiz = new Quiz(
+                            new Question(quizes.getAttributeValue(null, "question"), ""),
+                            new Answer(quizes.getAttributeValue(null, "firstanswer"), "", ""),
+                            new Answer(quizes.getAttributeValue(null, "secondanswer"), "", ""),
+                            new Answer(quizes.getAttributeValue(null,"thirdanswer"), "", ""),
+                            new Answer(quizes.getAttributeValue(null, "fourthanswer"), "", ""),
+                            quizes.getAttributeIntValue(null, "rightanswer", 0));
+                    list.add(quiz);
+
+                }
+            }
+
+            try {
+                eventType = quizes.next();
+            } catch (IOException ioException) {
+                Toast.makeText(this, "Error i/o", Toast.LENGTH_LONG).show();
+            } catch (XmlPullParserException xmlPullParserException) {
+                Toast.makeText(this, "Error parse xml", Toast.LENGTH_LONG)
+                        .show();
+            }
+        }
     }
 
 }
