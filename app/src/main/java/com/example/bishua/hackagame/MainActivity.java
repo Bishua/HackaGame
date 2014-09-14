@@ -72,6 +72,7 @@ public class MainActivity extends ActionBarActivity {
     public void startGame(View view){
 
         Intent intent = new Intent(this, QuizActivity.class);
+<<<<<<< HEAD
 
 
         Quiz quiz = new Quiz();
@@ -98,15 +99,10 @@ public class MainActivity extends ActionBarActivity {
         Bundle bundle = new Bundle();
         bundle.putSerializable("quiz", quiz);
         intent.putExtras(bundle);
+=======
+>>>>>>> origin/master
         startActivity(intent);
 
-    }
-    public void openQuizWithData(Quiz quiz){
-        Intent intent = new Intent(this, QuizActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("quiz", quiz);
-        intent.putExtras(bundle);
-        startActivity(intent);
     }
 
 }
