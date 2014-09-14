@@ -29,16 +29,14 @@ public class QuizActivity extends ActionBarActivity {
     private Quiz quiz;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-<<<<<<< HEAD
+
         Bundle bundle = getIntent().getExtras();
         Quiz quiz = null;
-=======
->>>>>>> origin/master
+
 
         quizGenerator = new QuizGenerator();
 
@@ -57,24 +55,23 @@ public class QuizActivity extends ActionBarActivity {
         initControls(quiz);
 
 
-
     }
 
 
     public void buttonAction(View view) {
-        int answer=0;
+        int answer = 0;
         switch (view.getId()) {
             case R.id.button1:
-                answer =1;
+                answer = 1;
                 break;
             case R.id.button2:
-                answer =2;
+                answer = 2;
                 break;
             case R.id.button3:
-                answer =3;
+                answer = 3;
                 break;
             case R.id.button4:
-                answer =4;
+                answer = 4;
                 break;
         }
         String massage = "";
@@ -138,7 +135,7 @@ public class QuizActivity extends ActionBarActivity {
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        quiz = (Quiz)savedInstanceState.getSerializable("quiz");
+        quiz = (Quiz) savedInstanceState.getSerializable("quiz");
         initControls(quiz);
         super.onRestoreInstanceState(savedInstanceState);
     }
@@ -153,19 +150,5 @@ public class QuizActivity extends ActionBarActivity {
 
 
     }
-
-<<<<<<< HEAD
-    public void questionLoad(){
-
-    }
-    private void nextQuestion(){
-            if(questionCount<10){
-
-            }else{
-=======
-
->>>>>>> origin/master
-
-
 
 }

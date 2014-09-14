@@ -70,37 +70,8 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void startGame(View view){
-
+        
         Intent intent = new Intent(this, QuizActivity.class);
-<<<<<<< HEAD
-
-
-        Quiz quiz = new Quiz();
-
-        //dummy data
-//        Answer answer1 = new Answer();
-//        answer1.setText("one");
-//        Answer answer2 = new Answer();
-//        answer2.setText("two");
-//        Answer answer3 = new Answer();
-//        answer3.setText("three");
-//        Answer answer4 = new Answer();
-//        answer4.setText("four");
-//        Question question = new Question();
-//        question.setText("question");
-//        quiz.setFirstAnswer(answer1);
-//        quiz.setSecondAnswer(answer2);
-//        quiz.setThirdAnswer(answer3);
-//        quiz.setFourthAnswer(answer4);
-//        quiz.setQuestion(question);
-//        quiz.setRightAnswer(1);
-        //end dummy data
-
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("quiz", quiz);
-        intent.putExtras(bundle);
-=======
->>>>>>> origin/master
         startActivity(intent);
 
     }
