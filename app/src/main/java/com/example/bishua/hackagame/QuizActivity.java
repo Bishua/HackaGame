@@ -2,6 +2,7 @@ package com.example.bishua.hackagame;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.XmlResourceParser;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -58,8 +59,13 @@ public class QuizActivity extends ActionBarActivity {
 
 //        quiz = quizGenerator.getNext();
         getQuizes();
-        Quiz quiz1 = list.get(0);
-        initControls(quiz1);
+
+
+        try {
+            Quiz quiz1 = list.get(0);
+            initControls(quiz1);
+        } catch (Exception e) {
+        }
 
 
     }
@@ -84,12 +90,12 @@ public class QuizActivity extends ActionBarActivity {
         String massage = "";
         if (answer == rightAnswer) {
             massage = "Right!";
-            rightQuestionCount++;
-            view.getId();
+  //          rightQuestionCount++;
+//            view.getId();
 
 
         } else {
-            massage = "Wrong";
+            massage = "Wrong :(";
 
         }
 
@@ -112,17 +118,24 @@ public class QuizActivity extends ActionBarActivity {
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_about:
+                openAbout();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
+
+    public void openAbout() {
+        Intent intent = new Intent(this, AboutActivity.class);
+        startActivity(intent);
+
+    }
+
 
 
     @Override
@@ -139,6 +152,8 @@ public class QuizActivity extends ActionBarActivity {
     }
 
     private void initControls(Quiz quiz) {
+        if (quiz == null) return;
+
         button1.setText(quiz.getFirstAnswer().getText());
         button2.setText(quiz.getSecondAnswer().getText());
         button3.setText(quiz.getThirdAnswer().getText());

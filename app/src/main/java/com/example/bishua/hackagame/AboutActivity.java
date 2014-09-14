@@ -20,7 +20,23 @@ public class AboutActivity extends ActionBarActivity implements View.OnClickList
         setContentView(R.layout.about);
 
         btnReturn = (Button) findViewById(R.id.btnReturn);
-        btnReturn.setOnClickListener(this);
+        btnReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+//                Intent intent = new Intent(this, MainActivity.class);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(intent);
+
+                Intent intent = new Intent(view.getContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+
+        });
+
+//        btnReturn.setOnClickListener(this);
 
 
 
