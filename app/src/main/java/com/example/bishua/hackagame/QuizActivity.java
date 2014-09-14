@@ -23,6 +23,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 public class QuizActivity extends ActionBarActivity {
@@ -35,7 +36,6 @@ public class QuizActivity extends ActionBarActivity {
     private TextView textView;
     private int questionCount = 0;
     private int rightQuestionCount = 0;
-    private QuizGenerator quizGenerator;
     private Quiz quiz;
     private List<Quiz> list = new ArrayList<Quiz>();
 
@@ -45,12 +45,6 @@ public class QuizActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-
-        Bundle bundle = getIntent().getExtras();
-        Quiz quiz = null;
-
-
-        quizGenerator = new QuizGenerator();
 
         button1 = (Button) findViewById(R.id.button1);
 
@@ -64,8 +58,8 @@ public class QuizActivity extends ActionBarActivity {
 
 //        quiz = quizGenerator.getNext();
         getQuizes();
-        list.get(0);
-        initControls(list.get(0));
+        Quiz quiz1 = list.get(0);
+        initControls(quiz1);
 
 
     }
@@ -103,7 +97,7 @@ public class QuizActivity extends ActionBarActivity {
                 .setMessage(massage)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        quiz = quizGenerator.getNext();
+                        quiz = list.get(new Random().nextInt(5));
                         initControls(quiz);
                     }
                 })
