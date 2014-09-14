@@ -93,7 +93,8 @@ public class QuizActivity extends ActionBarActivity {
                 .setMessage(massage)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        initControls(quizGenerator.getNext());
+                        quiz = quizGenerator.getNext();
+                        initControls(quiz);
                     }
                 })
 

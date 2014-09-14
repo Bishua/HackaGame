@@ -6,15 +6,17 @@ import com.example.bishua.hackagame.models.Quiz;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by BishUA on 14.09.2014.
  */
 public class QuizGenerator {
     List<Quiz> quizList = new ArrayList<Quiz>();
+    Random random = new Random();
     int i =0;
     public QuizGenerator(){
-        for(int i = 0; i<10; i++) {
+        for(int i = 0; i<50; i++) {
             Quiz quiz = new Quiz();
             Answer answer1 = new Answer();
             answer1.setText("one");
@@ -36,8 +38,7 @@ public class QuizGenerator {
         }
     }
     public Quiz getNext(){
-
-        return quizList.get(i++);
+        return quizList.get(random.nextInt(50));
     }
 
 }
