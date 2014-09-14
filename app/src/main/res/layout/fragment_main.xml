@@ -19,5 +19,20 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_gravity="center"
-        android:onClick="startGame" />
+        android:onClick="startGame"
+        android:clickable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Play"
+        android:id="@+id/textView"
+        android:layout_below="@+id/imageView"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_marginRight="39dp"
+        android:textSize="32dp"
+        android:onClick="startGame"/>
+
 </RelativeLayout>
